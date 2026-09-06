@@ -52,8 +52,11 @@ The available feature set limits how well segments can be distinguished — rich
 
 Tech Stack
 Language: Python
+
 Libraries: pandas, NumPy, scikit-learn, XGBoost, seaborn, matplotlib
+
 Tools: Jupyter Notebook, GridSearchCV
+
 Repository Structure
 ├── Customer_Segmentation.ipynb   # Full analysis notebook
 ├── Customer_Data.csv             # Dataset
