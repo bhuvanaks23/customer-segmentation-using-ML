@@ -12,17 +12,20 @@ Source: Kaggle — Customer Segmentation Dataset
 Size: ~8,068 customer records, 11 features
 Features: Gender, Age, Profession, Work Experience, Spending Score, Family Size, Marital Status, Graduation Status
 Target Variable: Customer Segment (A / B / C / D)
+
 Approach
 1. Exploratory Data Analysis
 Analyzed class distribution across the four segments
 Identified outliers in Age, Work Experience, and Family Size using boxplots
 Examined feature distributions for numerical and categorical variables separately
-2. Data Preprocessing
+
+3. Data Preprocessing
 Imputed missing values — median for numerical features, mode for categorical
 Applied Label Encoding to convert categorical features to numerical
 Standardized features using StandardScaler
 Split data into training and validation sets
-3. Model Training & Comparison
+
+4. Model Training & Comparison
 
 Trained and compared six classification models:
 
@@ -33,16 +36,20 @@ Random Forest	Good fit but showed signs of overfitting
 SVM	Consistent train/validation performance
 Naive Bayes	Underperformed due to simplifying assumptions
 XGBoost	Best performer — selected as final model
+
 4. Evaluation & Tuning
 Primary Metric: Weighted F1-Score (chosen over accuracy due to multi-class setting)
 Hyperparameter Tuning: GridSearchCV on XGBoost
 Error Analysis: Reviewed misclassified samples — Segment B was consistently hardest to predict, likely due to overlapping feature patterns with other segments
 Analyzed confusion matrices and classification reports per class
+
 5. Key Findings
 Segments C and D had the most distinguishable behavioral signatures
 Segment B showed low feature separability across all models
 Most influential features: Spending Score, Profession, Age
 The available feature set limits how well segments can be distinguished — richer features (purchase history, location data) would likely improve performance
+
+
 Tech Stack
 Language: Python
 Libraries: pandas, NumPy, scikit-learn, XGBoost, seaborn, matplotlib
@@ -51,11 +58,15 @@ Repository Structure
 ├── Customer_Segmentation.ipynb   # Full analysis notebook
 ├── Customer_Data.csv             # Dataset
 └── README.md
+
+
 Future Improvements
 Apply SHAP for model interpretability and stakeholder communication
 Engineer additional features or source richer customer data
 Explore ensemble stacking or neural network approaches
 Conduct fairness audits on demographic features before deployment
+
+
 References
 Buya et al. (2020) — Multinomial Logistic Regression for land-use modelling
 Wang (2024) — Customer Segmentation Based on Machine Learning Methods
